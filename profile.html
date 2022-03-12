@@ -19,25 +19,29 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="background-color: #a1a3a5;">
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src='asset/img/logo-rounded.png' width="50px" height="50px" style="margin-left: 20px;">
+            </a>
+            <h2 class="appname">Dr. Stock</h2>
+        </div>
+    </nav>
+
+    <div class="container-fluid content" style="background-color: #a1a3a5;">
 
         <div class="row">
-
+    
             <!-- side navbar -->
             <div class="col-sm-auto sticky-top" style="background-color: #393939;">
-
+    
                 <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top"
                     style="background-color: #393939;">
-
+    
                     <ul
                         class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link py-3 px-2">
-                                <img src='asset/img/logo-rounded.png' class="navbar img-fluid profile-image-pic rounded-circle">
-                            </a>
-                        </li>
-
+    
                         <li>
                             <a href="#" class="nav-link py-3 px-2 border-top box-width" title="" data-bs-toggle="tooltip"
                                 data-bs-placement="right" data-bs-original-title="Dashboard">
@@ -49,7 +53,7 @@
                                 <small>Stocks</small>
                             </a>
                         </li>
-
+    
                         <li>
                             <a href="#" class="nav-link py-3 px-2 border-top border-bottom box-width" title=""
                                 data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
@@ -63,8 +67,8 @@
                                 <small>Log</small>
                             </a>
                         </li>
-
-                        <li style="margin-top: 322px;">
+    
+                        <li style="margin-top: 300px;">
                             <a href="#" class="nav-link py-3 px-2 mt-5 border-top box-width" title=""
                                 data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="currentColor"
@@ -76,10 +80,10 @@
                                 <small>Profile</small>
                             </a>
                         </li>
-
+    
                         <li>
-                            <a href="#" class="nav-link py-3 px-2 border-top box-width" title=""
-                                data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                            <a href="#" class="nav-link py-3 px-2 border-top box-width" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Orders">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="currentColor"
                                     class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -91,20 +95,27 @@
                             </a>
                         </li>
                     </ul>
-
+    
                 </div>
-
+    
             </div>
 
-            <!-- Profile content -->
-            <div class="col-sm-auto title">
-            
-                <h1 class="appname">Dr. Stock</h1>
-            
+            <div class="col-sm-auto">
+
                 <div class="row">
-            
+                    <div class="col">
+                        <h1 class="appname">Dr. Stock</h1>
+                    </div>
+                    <div class="col">
+                        <p class="appname">Total assets: $</p>
+                    </div>
+                
+                </div>
+                
+                <div class="row">
+                
                     <!-- profile -->
-                    <div class="col-sm">
+                    <div class="col-sm-5">
                         <div class="d-flex flex-column align-items-center text-center p-3 py-5 border-right profile">
                             <img class="rounded-circle mt-5" width="100px" src="asset/img/profile.png">
                             <span class="font-weight-bold">Name </span>
@@ -114,20 +125,30 @@
                             <span>Last Log </span>
                         </div>
                     </div>
-            
-                    <div class="col-sm">
-                        One of three columns
+                
+                    <div class="col-sm-7">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                    of the
+                                    card's
+                                    content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
                     </div>
-            
+                
                 </div>
-            
-            
+
             </div>
-
+        
         </div>
+    
     </div>
-
-
+    </div>
 
 
 
