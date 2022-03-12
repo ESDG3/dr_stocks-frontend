@@ -1,0 +1,17 @@
+.profile-image-pic {
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+}
+
+.cardbody-color {
+	background-color: #a1a3a5;
+}
+.form-control-user {
+	border-radius: 50px;
+	padding: 15px;
+}
+
+a {
+	text-decoration: none;
+}
