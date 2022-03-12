@@ -18,44 +18,53 @@ a {
 
 /* hs */
  .navbar {
-        position: relative;
-        width: 50px;
-        height: 60px;
-        background-size: contain;
-        background-color: #393939;
+	position: sticky;
+	top: 0px;
+    background-color: #393939;
     }
 
-    small {
-        color: rgb(248, 189, 116);
-        font-size: small;
-    }
+small {
+	color: #f8bd74;
+	font-size: small;
+}
 
-    svg {
-        color: rgb(248, 189, 116);
-    }
+svg {
+	color: #f8bd74;
+}
 
-    .title {
-        background-color: #393939;
-        position: fixed;
-        /* Set the navbar to fixed position */
-        top: 0;
-        /* Position the navbar at the top of the page */
-        width: 95%;
-        /* Full width */
-        height: 50px;
-        right: 0px;
-    }
+.appname {
+	color: #f8bd74;
+	float: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
-    .appname {
-        color: rgb(248, 189, 116);
-        text-align: center;
-        align-items: center;
-    }
+.content {
+	position: fixed;
+}
 
-    .profile {
-        color: antiquewhite;
-    }
+.box-width {
+	width: 90px;
+}
 
-	.box-width {
-		width: 90px;
-	}
+.cardstyle {
+	margin-top: 10px;
+	background-color: #e2e1e1;
+	color: #df9740;
+	justify-content: center;
+}
+
+.columns {
+	align-items: center;
+	justify-content: center;
+}
+
+.orange {
+	color: #f8bd74;
+}
+
+.bg-orange{
+	background-color: #f8bd74;
+}
