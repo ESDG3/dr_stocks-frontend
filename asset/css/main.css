@@ -24,16 +24,16 @@ a {
     }
 
 small {
-	color: rgb(248, 189, 116);
+	color: #f8bd74;
 	font-size: small;
 }
 
 svg {
-	color: rgb(248, 189, 116);
+	color: #f8bd74;
 }
 
 .appname {
-	color: rgb(248, 189, 116);
+	color: #f8bd74;
 	float: none;
 	position: absolute;
 	top: 50%;
@@ -45,10 +45,18 @@ svg {
 	position: fixed;
 }
 
-.profile {
-	color: antiquewhite;
-}
-
 .box-width {
 	width: 90px;
+}
+
+.cardstyle {
+	margin-top: 10px;
+	background-color: #e2e1e1;
+	color: #df9740;
+	justify-content: center;
+}
+
+.columns {
+	align-items: center;
+	justify-content: center;
 }
