@@ -15,3 +15,43 @@
 a {
 	text-decoration: none;
 }
+
+/* hs */
+ .navbar {
+        position: relative;
+        width: 50px;
+        height: 60px;
+        background-size: contain;
+        background-color: #393939;
+    }
+
+    small {
+        color: rgb(248, 189, 116);
+        font-size: small;
+    }
+
+    svg {
+        color: rgb(248, 189, 116);
+    }
+
+    .title {
+        background-color: #393939;
+        position: fixed;
+        /* Set the navbar to fixed position */
+        top: 0;
+        /* Position the navbar at the top of the page */
+        width: 95%;
+        /* Full width */
+        height: 50px;
+        right: 0px;
+    }
+
+    .appname {
+        color: rgb(248, 189, 116);
+        text-align: center;
+        align-items: center;
+    }
+
+    .profile {
+        color: antiquewhite;
+    }
