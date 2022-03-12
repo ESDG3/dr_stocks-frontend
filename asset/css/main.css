@@ -55,3 +55,7 @@ a {
     .profile {
         color: antiquewhite;
     }
+
+	.box-width {
+		width: 90px;
+	}
