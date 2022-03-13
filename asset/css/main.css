@@ -60,3 +60,10 @@ svg {
 	justify-content: center;
 }
 
+.orange {
+	color: #f8bd74;
+}
+
+.bg-orange{
+	background-color: #f8bd74;
+}
