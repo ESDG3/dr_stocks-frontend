@@ -86,7 +86,7 @@ nav-link {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-    font-size: medium;
+  font-size: medium;
 }
 
 .navbar {
@@ -98,9 +98,14 @@ nav-link {
     padding: 0px;
 }
 
+.bottomicons {
+  position: fixed;
+  bottom: 0;
+}
+
 .content {
 	position: fixed;
-    left: 100px;
+  left: 100px;
 }
 
 .cardstyle {
@@ -118,12 +123,13 @@ nav-link {
 .columns {
 	align-items: center;
 	justify-content: center;
-    width: 1000px;
+  width: 1000px;
 }
 
 /* cw */
 .orange {
 	color: #f8bd74;
+  font-size: medium;
 }
 
 .bg-orange{
