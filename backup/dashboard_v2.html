@@ -124,8 +124,8 @@
 						height="40px"
 						style="margin-left: 15px"
 						loading="lazy"
-						/>
-					</a>
+					/>
+				</a>
 
 				<!-- Website name -->
 				<h3 class="appname">Dr. Stock</h3>
@@ -145,13 +145,20 @@
 			<!-- =========================================
 									First
 			================================================== -->
-			<div class="col" style="margin-top: 100px; padding-left: 130px">
-
-				<div class="card" style="width: auto;">
-					<div class="card-header">
+			<div
+				class="col-2"
+				style="
+					margin-top: 100px;
+					padding-left: 30px;
+					width: auto;
+					margin-left: 130px;
+				"
+			>
+				<div class="card h-100 bg-dark" style="width: 500px">
+					<div class="card-header bg-dark">
 						<div class="input-group">
 							<select class="form-select" aria-label="Default select example">
-								<option selected value="NA">Categories</option>
+								<option selected value="NA">-select a category-</option>
 								<option value="Energy">Energy</option>
 								<option value="Materials">Materials</option>
 								<option value="Industrials">Industrials</option>
@@ -196,190 +203,231 @@
 								</svg>
 							</button>
 						</div>
-
-
 					</div>
 					<ul class="list-group list-group-flush">
-					  <li class="list-group-item">An item</li>
-					  <li class="list-group-item">A second item</li>
-					  
-					  <li class="list-group-item">A third item</li>
+						<li class="list-group-item bg-dark text-light border-light">
+							An item
+						</li>
+						<li class="list-group-item bg-dark text-light border-light">
+							A second item
+						</li>
+
+						<li class="list-group-item bg-dark text-light border-light">
+							A third item
+						</li>
 					</ul>
-				  </div>
-				
-				
+				</div>
 			</div>
 			<!-- =========================================
-									Second
+									Second - Chart 
 			================================================== -->
-			<div class="col" style="margin-top: 100px;">
-				<!-- Chart -->
-				
-					<div class="text-center">
-						<!-- <p class="text-light">static chart image</p> -->
-						<!-- <img src="asset/img/line-graph.webp"> -->
-						<iframe
-							src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=blue&backgroundColor=black&textColor=white"
-							height="400px"
-							width="100%"
-							title="Iframe Example"
-						></iframe>
+			<div class="col" style="margin-top: 100px">
+				<div class="card h-100 bg-dark">
+					<div class="card-header bg-dark">
+						<div class="text-center bg-drak">
+							<iframe
+								src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&backgroundColor=black&textColor=white"
+								height="400px"
+								width="100%"
+								title="Iframe Example"
+							></iframe>
+						</div>
 					</div>
-				
-				<h4 class="fw-bold text-light">Your Stock</h4>
-							<table class="table table-dark table-striped">
-								<thead>
-									<tr>
-										<th scope="col">Name</th>
-										<th scope="col">Symbol</th>
-										<th scope="col">Last</th>
-										<th scope="col">Cost</th>
-										<th scope="col">Qty</th>
-										<th scope="col">Mkt Cap</th>
-										<th scope="col">Float Pnt</th>
-										<th scope="col">Float Pnt %</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td scope="row">Apple Inc.</th>
-										<td>AAPL</td>
-										<td>351.81</td>
-										<td>281.90</td>
-										<td>1</th>
-										<td>351.81</td>
-										<td>+69.91</td>
-										<td>+24.80%</td>
-									</tr>
-									<tr>
-										<td scope="row">Apple Inc.</th>
-										<td>AAPL</td>
-										<td>351.81</td>
-										<td>281.90</td>
-										<td>1</th>
-										<td>351.81</td>
-										<td>+69.91</td>
-										<td>+24.80%</td>
-									</tr>
-									<tr>
-										<td scope="row">Apple Inc.</th>
-										<td>AAPL</td>
-										<td>351.81</td>
-										<td>281.90</td>
-										<td>1</th>
-										<td>351.81</td>
-										<td>+69.91</td>
-										<td>+24.80%</td>
-									</tr>
-								</tbody>
-							</table>
+					<h4 class="fw-bold bg-dark text-light">Your Stock</h4>
+
+					<!-- need to run a for loop to extract from db -->
+					<table class="table table-dark table-striped table-hover">
+						<tr>
+							<th>User Stock_ID</th>
+							<th>AccID</th>
+							<th>TradeID</th>
+							<th>Stock Symbol</th>
+							<th>Stock quantity</th>
+							<th>Purchased Price</th>
+							<th>Currency</th>
+						</tr>
+						<tr>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+						</tr>
+						<tr>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+						</tr>
+
+						<tr>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+							<td>##</td>
+						</tr>
+					</table>
+				</div>
+				<!-- <table class="table table-dark table-striped">
+					  <thead>
+						  <tr>
+							  <th scope="col">Name</th>
+							  <th scope="col">Symbol</th>
+							  <th scope="col">Last</th>
+							  <th scope="col">Cost</th>
+							  <th scope="col">Qty</th>
+							  <th scope="col">Mkt Cap</th>
+							  <th scope="col">Float Pnt</th>
+							  <th scope="col">Float Pnt %</th>
+						  </tr>
+					  </thead>
+					  <tbody>
+						  <tr>
+							  <td scope="row">Apple Inc.</th>
+							  <td>AAPL</td>
+							  <td>351.81</td>
+							  <td>281.90</td>
+							  <td>1</th>
+							  <td>351.81</td>
+							  <td>+69.91</td>
+							  <td>+24.80%</td>
+						  </tr>
+						  <tr>
+							  <td scope="row">Apple Inc.</th>
+							  <td>AAPL</td>
+							  <td>351.81</td>
+							  <td>281.90</td>
+							  <td>1</th>
+							  <td>351.81</td>
+							  <td>+69.91</td>
+							  <td>+24.80%</td>
+						  </tr>
+						  <tr>
+							  <td scope="row">Apple Inc.</th>
+							  <td>AAPL</td>
+							  <td>351.81</td>
+							  <td>281.90</td>
+							  <td>1</th>
+							  <td>351.81</td>
+							  <td>+69.91</td>
+							  <td>+24.80%</td>
+						  </tr>
+					  </tbody>
+				  </table> -->
 			</div>
 			<!-- =========================================
 									Third
 			================================================== -->
-			<div class="col" style="margin-top: 100px;">
-			
-			<div class="card bg-dark" style="width: auto;">
-				<div class="card-header bg-dark border-light">
-				  <p class="fs-3 text-light"><b>AAPL Apple</b> <br>
-					<b class="fs-4 text-success">351.77↑</b> <span class="fs-5 text-success">+2.26%</span>
-				</p>
-				<p style="color: #f1f1f1e3;">
-					<b>Key Statistics</b> <br></p>
-				</div>
-				<ul class="list-group list-group-flush">
-				  <li class="list-group-item bg-dark">
+			<div class="col-3" style="margin-top: 100px; padding-right: 30px">
+				<div class="card h-100 bg-dark">
+					<div class="card-header bg-dark border-light">
+						<p class="fs-3 text-light">
+							<b>AAPL Apple</b> <br />
+							<b class="fs-4 text-success">351.77↑</b>
+							<span class="fs-5 text-success">+2.26%</span>
+						</p>
+						<p style="color: #f1f1f1e3"><b>Key Statistics</b> <br /></p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item bg-dark">
+							<table
+								class="table table-borderless mx-1 bg-dark"
+								style="color: #f1f1f1e3; table-layout: fixed"
+							>
+								<tr>
+									<td>High</td>
+									<td class="text-success">352.84</td>
+									<td>Low</td>
+									<td class="text-success">346.09</td>
+								</tr>
 
-					
-				<table class="table table-borderless mx-1 bg-dark" style="color: #f1f1f1e3; table-layout:fixed;">
-					<tr>
-						<td>High</td>
-						<td class="text-success">352.84</td>
-						<td>Low</td>
-						<td class="text-success">346.09</td>
-					</tr>
-	
-					<tr>
-						<td>Open</td>
-						<td class="text-success">347.90</td>
-						<td>Close</td>
-						<td>343.99</td>
-					</tr>
-	
-					<tr>
-						<td>Vol (share)</td>
-						<td>22.69M</td>
-						<td>T/O</td>
-						<td>7.94B</td>
-					</tr>
-					<tr>
-						<td>T/O Rate</td>
-						<td>0.52%</td>
-						<td>Change</td>
-						<td>1.96%</td>
-					</tr>
-	
-					<tr>
-						<td>52wk High</td>
-						<td class="text-success">352.84</td>
-						<td>52wk Low</td>
-						<td class="text-danger">190.30</td>
-					</tr>
-	
-					<tr>
-						<td>Mkt Cap (USD)</td>
-						<td>1.52T</td>
-						<td>Shares</td>
-						<td>4.33B</td>
-					</tr>
-	
-					<tr>
-						<td>Float Cap (USD)</td>
-						<td>1.52T</td>
-						<td>Float</td>
-						<td>4.33B</td>
-					</tr>
-	
-					<tr>
-						<td>EPS TTM</td>
-						<td>12.73</td>
-						<td>P/E TTM</td>
-						<td>27.63</td>
-					</tr>
-	
-					<tr>
-						<td>EPS LTM</td>
-						<td>11.97</td>
-						<td>P/E LTM</td>
-						<td>29.39</td>
-					</tr>
-	
-					<tr>
-						<td>Dividend</td>
-						<td>3.08</td>
-						<td>Dividend%</td>
-						<td>0.88%</td>
-					</tr>
-	
-					<tr>
-						<td>RDA</td>
-						<td>12.38%</td>
-						<td>RDE</td>
-						<td>62.09%</td>
-					</tr>
-	
-					<tr>
-						<td>P/B</td>
-						<td>19.44</td>
-					</tr>
-				</table>
-				  </li>
-				</ul>
-			  </div>
-			
+								<tr>
+									<td>Open</td>
+									<td class="text-success">347.90</td>
+									<td>Close</td>
+									<td>343.99</td>
+								</tr>
+
+								<tr>
+									<td>Vol (share)</td>
+									<td>22.69M</td>
+									<td>T/O</td>
+									<td>7.94B</td>
+								</tr>
+								<tr>
+									<td>T/O Rate</td>
+									<td>0.52%</td>
+									<td>Change</td>
+									<td>1.96%</td>
+								</tr>
+
+								<tr>
+									<td>52wk High</td>
+									<td class="text-success">352.84</td>
+									<td>52wk Low</td>
+									<td class="text-danger">190.30</td>
+								</tr>
+
+								<tr>
+									<td>Mkt Cap (USD)</td>
+									<td>1.52T</td>
+									<td>Shares</td>
+									<td>4.33B</td>
+								</tr>
+
+								<tr>
+									<td>Float Cap (USD)</td>
+									<td>1.52T</td>
+									<td>Float</td>
+									<td>4.33B</td>
+								</tr>
+
+								<tr>
+									<td>EPS TTM</td>
+									<td>12.73</td>
+									<td>P/E TTM</td>
+									<td>27.63</td>
+								</tr>
+
+								<tr>
+									<td>EPS LTM</td>
+									<td>11.97</td>
+									<td>P/E LTM</td>
+									<td>29.39</td>
+								</tr>
+
+								<tr>
+									<td>Dividend</td>
+									<td>3.08</td>
+									<td>Dividend%</td>
+									<td>0.88%</td>
+								</tr>
+
+								<tr>
+									<td>RDA</td>
+									<td>12.38%</td>
+									<td>RDE</td>
+									<td>62.09%</td>
+								</tr>
+
+								<tr>
+									<td>P/B</td>
+									<td>19.44</td>
+								</tr>
+							</table>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-
 		<!-- Optional JavaScript; choose one of the two! -->
 
 		<!-- Option 1: Bootstrap Bundle with Popper -->
