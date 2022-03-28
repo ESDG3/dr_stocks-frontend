@@ -20,6 +20,10 @@
 
 		<!-- external style -->
 		<link rel="stylesheet" href="asset/css/main.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+			rel="stylesheet"
+		/>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -49,7 +53,7 @@
 				</div>
 				<div class="col-2">
 					<span class="navbar-text text-light" style="text-align: left">
-						Total Assets: $ ##,###.##
+						Total Cash Assets: $ ##,###.##
 					</span>
 				</div>
 				<div class="col-0">
@@ -122,161 +126,196 @@
 					<div class="card h-100 bg-dark" style="width: 390px">
 						<div class="card-header bg-dark">
 							<div class="input-group">
-								<!-- start of dropdown ver 1 div -->
-								<!-- <div style="width: 150px">
-									<select
-										class="form-select"
-										aria-label="Default select example"
-									>
-										<option selected value="NA">-select a category-</option>
-										<option value="Energy">Energy</option>
-										<option value="Materials">Materials</option>
-										<option value="Industrials">Industrials</option>
-										<option value="Utilities">Utilities</option>
-										<option value="Healthcare">Healthcare</option>
-										<option value="Financial">Financial</option>
-										<option value="Consumer Discretionary">
-											Consumer Discretionary
-										</option>
-										<option value="Consumer Staples">Consumer Staples</option>
-										<option value="Information Technology">
-											Information Technology
-										</option>
-										<option value="Communication Services">
-											Communication Services
-										</option>
-										<option value="Real Estate">Real Estate</option>
-									</select>
-								</div> -->
-								<!-- end of dropdown ver 1 div -->
-
-								<!-- start of dropdown ver 2 div -->
 								<div class="dropdown">
-									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									<button
+										class="btn btn-secondary dropdown-toggle"
+										type="button"
+										id="dropdownMenuButton1"
+										data-bs-toggle="dropdown"
+										aria-expanded="false"
+									>
 										Categories
 									</button>
-									<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									<ul
+										id="categories"
+										class="dropdown-menu"
+										aria-labelledby="dropdownMenuButton1"
+									>
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Energy" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="energy"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Energy
 												</label>
 											</div>
-
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Materials" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="materials"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Materials
 												</label>
 											</div>
-											
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Industrials" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="industrials"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Industrials
 												</label>
 											</div>
-											
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Utilities" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="utilities"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Utilities
 												</label>
 											</div>
-
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Healthcare" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="healthcare"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Healthcare
 												</label>
 											</div>
-											
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Financial" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="financial"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Financial
 												</label>
 											</div>
-											
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Consumer Discretionary" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="consumer_discretionary"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Consumer Discretionary
 												</label>
 											</div>
-
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Consumer Staples" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="consumer_staples"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Consumer Staples
 												</label>
 											</div>
-											
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Information Technology" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="technology"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Information Technology
 												</label>
 											</div>
-											
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Communication Services" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="communication"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Communication Services
 												</label>
 											</div>
-
 										</li>
 
 										<li>
-										
 											<div class="form-check mx-3 my-2">
-												<input class="form-check-input" type="checkbox" value="Real Estate" id="flexCheckDefault">
+												<input
+													name="checkbox[]"
+													class="form-check-input"
+													type="checkbox"
+													value="real_estate"
+													id="flexCheckDefault"
+													onclick="selectedCheck()"
+												/>
 												<label class="form-check-label" for="flexCheckDefault">
 													Real Estate
 												</label>
 											</div>
-											
 										</li>
-
 									</ul>
 								</div>
 								<!-- end of dropdown ver 2 div -->
@@ -284,7 +323,7 @@
 								<!-- start of searchbar div -->
 								<div style="width: 200px">
 									<input
-										id="Searchstocks"
+										id="search_stocks"
 										class="form-control"
 										type="search"
 										placeholder="Search..."
@@ -294,19 +333,63 @@
 								<!-- end of searchbar div -->
 							</div>
 						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item bg-dark text-light border-light">
-								An item
-							</li>
-							<li class="list-group-item bg-dark text-light border-light">
-								A second item
-							</li>
-							<li class="list-group-item bg-dark text-light border-light">
-								A third item
-							</li>
-						</ul>
+
+						<div id="search_container"></div>
 					</div>
 				</div>
+				<!-- ====================================
+								Categories JS 
+					===================================== -->
+
+				<script>
+					temp = {
+						healthcare: ["UNH", "PFE", "SWTX", "INCY", "TMO"],
+						energy: ["XOM", "MPC", "COST", "VLO", "PBR"],
+						utilities: ["ELEC", "DUK", "NRG", "DTE", "DRE"],
+						financial: ["BA", "BAC", "UWMC", "CSCO", "CVX"],
+						real_estate: ["HON", "ARE", "EXR", "INVH", "REG"],
+						technology: ["TSLA", "GOOG", "AMZN", "AAPL", "FB"],
+						consumer_discretionary: ["KO", "MMM", "MCD", "DIS", "WMT"],
+						materials: ["X", "CLF", "STLD", "LYB", "AA"],
+						communication: ["PARA", "LUMN", "D", "ATUS", "WWE"],
+						industrials: ["LPX", "SEB", "C", "NLSN", "CPA"],
+						consumer_staples: ["ACI", "HSY", "BG", "HRL", "SYY"],
+					};
+
+					var container = document.getElementById("search_container");
+					var ul = document.createElement("ul");
+					ul.setAttribute("id", "stocks_list");
+					ul.setAttribute("class", "list-group-flush p-0");
+
+					function selectedCheck() {
+						var checkedValue = [];
+						var inputElements = document.getElementsByName("checkbox[]");
+
+						for (var i = 0; inputElements[i]; ++i) {
+							if (inputElements[i].checked) {
+								checkedValue.push(inputElements[i].value);
+							}
+						}
+						while (ul.firstChild) {
+							ul.removeChild(ul.firstChild);
+						}
+						for (value of checkedValue) {
+							for (symbols of temp[value]) {
+								var a = document.createElement("a");
+								a.setAttribute(
+									"class",
+									"link-primary list-group-item bg-dark border-light "
+								);
+								a.setAttribute("value", symbols);
+								a.setAttribute("href", "#");
+								a.innerHTML = symbols + " (" + value + ")";
+								ul.appendChild(a);
+							}
+							container.appendChild(ul);
+						}
+					}
+				</script>
+
 				<!-- =========================================
 										Second - Chart 
 				================================================== -->
@@ -315,6 +398,7 @@
 						<div class="card-header bg-dark">
 							<div class="text-center bg-drak">
 								<iframe
+									class="responsive-iframe"
 									src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=black&backgroundColor=black&textColor=white"
 									height="600px"
 									width="100%"
@@ -328,6 +412,7 @@
 				<!-- =========================================
 										Third
 				================================================== -->
+
 				<div class="col-3">
 					<div class="card h-100 bg-dark">
 						<div class="card-header bg-dark border-light">
@@ -383,6 +468,45 @@
 								</table>
 							</li>
 						</ul>
+						<!-- stock Quantity -->
+						<div class="counter m-2 text-center">
+							<span
+								class="down text-light p-2 bg-secondary rounded-3"
+								onClick="decreaseCount(event, this)"
+								>-</span
+							>
+							<input
+								id="quantity"
+								style="text-align: center"
+								type="text"
+								value="1"
+							/>
+							<span
+								class="up text-light p-2 bg-secondary rounded-3"
+								onClick="increaseCount(event, this)"
+								>+</span
+							>
+						</div>
+						<script>
+							function increaseCount(a, b) {
+								var input = b.previousElementSibling;
+								var value = parseInt(input.value, 10);
+								value = isNaN(value) ? 0 : value;
+								value++;
+								input.value = value;
+							}
+
+							function decreaseCount(a, b) {
+								var input = b.nextElementSibling;
+								var value = parseInt(input.value, 10);
+								if (value > 1) {
+									value = isNaN(value) ? 0 : value;
+									value--;
+									input.value = value;
+								}
+							}
+						</script>
+
 						<!-- js onclick on the button -->
 						<button class="btn btn-success m-2" type="button">Buy</button>
 					</div>
@@ -393,7 +517,10 @@
 				<div class="row">
 					<h4 class="fw-bold bg-dark text-light p-3">Your Stock</h4>
 					<!-- data extract from db -->
-					<table id="user_stocks_table" class="table table-dark table-striped table-hover">
+					<table
+						id="user_stocks_table"
+						class="table table-dark table-striped table-hover"
+					>
 						<thead>
 							<tr>
 								<th>User Stock_ID</th>
@@ -405,36 +532,7 @@
 								<th>Currency</th>
 							</tr>
 						</thead>
-						<tbody id="user_stocks_table_body">
-						</tbody>
-						<!-- <tr>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-						</tr>
-						<tr>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-						</tr>
-
-						<tr>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-							<td>##</td>
-						</tr> -->
+						<tbody id="user_stocks_table_body"></tbody>
 					</table>
 				</div>
 			</div>
@@ -448,7 +546,9 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
-		></script>
-		<script src="./asset/js/dashboard.js"></script>
+		>
+			</scrip>
+					<script src="./asset/js/dashboard.js">
+		</script>
 	</body>
 </html>
