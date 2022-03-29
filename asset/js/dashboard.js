@@ -17,6 +17,10 @@ $(window).on('load', function() {
     get_stock_pref(accid, apikey);
 });
 
+setTimeout(function(){
+    get_stock_info(apikey);
+ }, 5000);
+
 function get_stock(symbol){
     document.getElementById('stock_symbol').textContent = symbol;
     var apikey = sessionStorage.getItem("apikey");
@@ -186,7 +190,7 @@ async function get_acc_bal(accid, apikey){
         const result = await getAjax(website, 'GET');
         if (result.code === 200) {
             var acc_bal = document.getElementById('acc_bal');
-            var user_acc_bal = "Total Assets: " + "$" + String(parseFloat(result["data"]["trade_acc_balance"]));
+            var user_acc_bal = "Total Assets: " + "$" + String(parseFloat(result["data"]["trade_acc_balance"]).toFixed(2));
             acc_bal.textContent = user_acc_bal;
         }
     } catch (error) {

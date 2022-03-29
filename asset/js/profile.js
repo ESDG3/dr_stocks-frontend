@@ -56,8 +56,8 @@ async function get_acc_bal(accid, apikey){
         const result = await getAjax(website, 'GET');
         if (result.code === 200) {
             var acc_bal = document.getElementById('acc_bal');
-            document.getElementById('main_acc_bal').textContent = "$" + String(parseFloat(result["data"]["trade_acc_balance"]));
-            var user_acc_bal = "Total Assets: " + "$" + String(parseFloat(result["data"]["trade_acc_balance"]));
+            document.getElementById('main_acc_bal').textContent = "$" + String(parseFloat(result["data"]["trade_acc_balance"]).toFixed(2));
+            var user_acc_bal = "Total Assets: " + "$" + String(parseFloat(result["data"]["trade_acc_balance"]).toFixed(2));
             acc_bal.textContent = user_acc_bal;
         }
     } catch (error) {
