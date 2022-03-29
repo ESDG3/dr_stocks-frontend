@@ -1,6 +1,3 @@
-//URL paths
-
-
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str));
 };
@@ -10,7 +7,7 @@ function UnicodeDecodeB64(str) {
 };
 
 
-async function doAjax(url, method){
+async function getAjax(url, method){
     return $.ajax({
         url: url,
         type: method || 'GET',
@@ -27,21 +24,16 @@ async function login(){
     var params = "?" + send_email + "&" + send_password;
     const website = loginURL + params;
     try {
-        const result = await doAjax(website, 'GET');
-        console.log(result)
+        const result = await getAjax(website, 'GET');
         if (result.code === 200) {
-            console.log(result["data"]);
             var apikey = result["data"]["apikey"];
             var accid = b64EncodeUnicode(result["data"]["accid"]);
+            var email = result["data"]["email"];
             sessionStorage.setItem("apikey", apikey);
             sessionStorage.setItem("accid", accid);
-            alert("Login Successful");
-            window.location.replace("dashboard.html");
+            sessionStorage.setItem("email", email);
+            window.location.replace("dashboard-update.html");
         }
-
     } catch (error) {
-        console.log('error')
-        console.log("pause2");
-        alert("Error: " + error);
     }
 }
