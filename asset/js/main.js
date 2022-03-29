@@ -32,7 +32,7 @@ async function login(){
             sessionStorage.setItem("apikey", apikey);
             sessionStorage.setItem("accid", accid);
             sessionStorage.setItem("email", email);
-            window.location.replace("dashboard-update.html");
+            window.location.replace("dashboard.html");
         }
     } catch (error) {
     }
