@@ -15,11 +15,14 @@ $(window).on('load', function() {
     get_stock_info(apikey);
     get_acc_bal(accid, apikey);
     get_stock_pref(accid, apikey);
+    repeat();
 });
 
-setTimeout(function(){
+function repeat(){
+    setTimeout(repeat, 10000);
+    var apikey = sessionStorage.getItem("apikey");
     get_stock_info(apikey);
- }, 5000);
+}
 
 function get_stock(symbol){
     document.getElementById('stock_symbol').textContent = symbol;
@@ -360,6 +363,5 @@ async function change_stock_pref(){
     }
     if (deletelist.length > 0){
         delstockpref(accid, apikey, deletelist);
-    }
-    
-} 
+    }   
+}
