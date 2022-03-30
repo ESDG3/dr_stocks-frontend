@@ -22,11 +22,9 @@ $(window).on('load', function() {
 
 function checktime(){
     const d = new Date();
-    d.getUTCHours();
-    d.getUTCMinutes();
-    var current_time = d.getHours() + ":" + d.getMinutes();
-    var start_time = "09:30";
-    var end_time = "16:00";
+    var current_time = d.getUTCHours() + ":" + d.getUTCMinutes();
+    var start_time = "13:30";
+    var end_time = "20:00";
     if (current_time > start_time && current_time < end_time){
         return true;
     }
@@ -38,6 +36,8 @@ function repeat(){
         setTimeout(repeat, 10000);
         var apikey = sessionStorage.getItem("apikey");
         get_stock_info(apikey);
+    }else{
+        document.getElementById("transaction_action").disabled = true;
     }
 }
 
@@ -192,6 +192,7 @@ async function place_trade(){
             var apikey = sessionStorage.getItem("apikey");
             var accid = sessionStorage.getItem("accid");
             get_user_stock(accid, apikey);
+            get_acc_bal(accid, apikey);
 
         }
     }
