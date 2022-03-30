@@ -24,6 +24,9 @@
 			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -123,7 +126,7 @@
 										First
 				================================================== -->
 				<div class="col-2" style="width: auto">
-					<div class="card h-100 bg-dark" style="width: 390px">
+					<div class="card h-100 bg-dark" style="width: 400px">
 						<div class="card-header bg-dark">
 							<div class="input-group">
 								<div class="dropdown">
@@ -335,9 +338,13 @@
 										type="search"
 										placeholder="Search..."
 										aria-label="Search"
+										value=""
 									/>
 								</div>
 								<!-- end of searchbar div -->
+								<div style="width: 20px">
+									<button onclick="search()" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+								</div>
 							</div>
 						</div>
 

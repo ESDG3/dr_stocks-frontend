@@ -1,3 +1,6 @@
+var url = "localhost";
+
+
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str));
 };
@@ -16,7 +19,8 @@ async function getAjax(url, method){
 }
 
 async function login(){
-    var loginURL = 'http://localhost:8000/api/v1/login';
+    var loginURL = "http://"+url+":8000/api/v1/login";
+
     var email = document.getElementById('inputEmail').value;
     var password = document.getElementById('inputPassword').value;
     var send_email =  "email" + "=" + email;

@@ -1,3 +1,5 @@
+var url = "localhost";
+
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str));
 };
@@ -24,7 +26,7 @@ async function getAjax(url, method){
 async function getAccDetails(accid, apikey){
     var accid = UnicodeDecodeB64(accid);
     var apikey = UnicodeDecodeB64(apikey);
-    var accURL = 'http://localhost:8000/api/v1/account/email/';
+    var accURL = 'http://' + url + ':8000/api/v1/account/email/';
     var email = String(sessionStorage.getItem("email"));
     var params = "?apikey=" + apikey;
     const website = accURL + email + params;
@@ -50,7 +52,7 @@ async function get_acc_bal(accid, apikey){
     var apikey = UnicodeDecodeB64(apikey);
     var currency = sessionStorage.getItem("currency");
     try {
-        var tradeaccURL = 'http://localhost:8000/api/v1/trading_acc/';
+        var tradeaccURL = 'http://' + url + ':8000/api/v1/trading_acc/';
         var params = "?apikey=" + apikey;
         const website = tradeaccURL + accid + "/" + currency + params;
         const result = await getAjax(website, 'GET');
@@ -82,7 +84,7 @@ async function make_deposit(amount){
     var currency = sessionStorage.getItem("currency");
     var transaction_action = "DEPOSIT";
     try {
-        var depositURL = 'http://localhost:8000/api/v1/make_deposit';
+        var depositURL = 'http://' + url + ':8000/api/v1/make_deposit';
         var params = "?apikey=" + apikey;
         var data = {
             "email":email,

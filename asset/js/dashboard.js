@@ -1,3 +1,5 @@
+var url = "localhost";
+
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str));
 };
@@ -18,10 +20,25 @@ $(window).on('load', function() {
     repeat();
 });
 
+function checktime(){
+    const d = new Date();
+    d.getUTCHours();
+    d.getUTCMinutes();
+    var current_time = d.getHours() + ":" + d.getMinutes();
+    var start_time = "09:30";
+    var end_time = "16:00";
+    if (current_time > start_time && current_time < end_time){
+        return true;
+    }
+    return false;    
+}
+
 function repeat(){
-    setTimeout(repeat, 10000);
-    var apikey = sessionStorage.getItem("apikey");
-    get_stock_info(apikey);
+    if (checktime()){
+        setTimeout(repeat, 10000);
+        var apikey = sessionStorage.getItem("apikey");
+        get_stock_info(apikey);
+    }
 }
 
 function get_stock(symbol){
@@ -51,7 +68,7 @@ async function get_user_stock(accid, apikey){
     $('#user_stocks_table_body tr').remove();
     var accid = UnicodeDecodeB64(accid);
     var apikey = UnicodeDecodeB64(apikey);
-    var loginURL = 'http://localhost:8000/api/v1/user_stock/';
+    var loginURL = 'http://' + url + ':8000/api/v1/user_stock/';
     var params = "?apikey=" + apikey;
     const website = loginURL + accid + params;
     try {
@@ -85,7 +102,7 @@ function stock_status(current, close){
 
 async function get_stock_info(apikey){
     try {
-        var stockURL = 'http://localhost:8000/api/v1/stock_info/';
+        var stockURL = 'http://' + url + ':8000/api/v1/stock_info/';
         var stock_symbol = document.getElementById('stock_symbol').textContent;
         document.getElementById("stock_company").textContent = sessionStorage.getItem("company_name");
         var apikey = UnicodeDecodeB64(apikey);
@@ -133,7 +150,7 @@ async function postAjax(url, method, data){
 };
 
 async function get_stock_company_info(apikey){
-    var stockcompanyURL = 'http://localhost:8000/api/v1/stock_info/profile2/'
+    var stockcompanyURL = 'http://' + url + ':8000/api/v1/stock_info/profile2/'
     var apikey = UnicodeDecodeB64(apikey);
     var params = "?apikey=" + apikey;
     var stock_symbol = document.getElementById('stock_symbol').textContent;
@@ -152,7 +169,7 @@ async function get_stock_company_info(apikey){
 
 async function place_trade(){
     try {
-        var placeradeURL = 'http://localhost:8000/api/v1/place_trade';        
+        var placeradeURL = 'http://' + url +':8000/api/v1/place_trade';        
         var apikey = UnicodeDecodeB64(sessionStorage.getItem("apikey"));
         var email = String(sessionStorage.getItem("email"));
         var stock_symbol = String(document.getElementById('stock_symbol').textContent);
@@ -171,9 +188,11 @@ async function place_trade(){
         const result = await postAjax(website, 'POST', data);
         if (result.code === 201) {
             alert("Trade placed successfully");
+            document.getElementById("quantity").value = "1";
             var apikey = sessionStorage.getItem("apikey");
             var accid = sessionStorage.getItem("accid");
             get_user_stock(accid, apikey);
+
         }
     }
     catch (error) {
@@ -187,7 +206,7 @@ async function get_acc_bal(accid, apikey){
     var apikey = UnicodeDecodeB64(apikey);
     var currency = sessionStorage.getItem("currency");
     try {
-        var tradeaccURL = 'http://localhost:8000/api/v1/trading_acc/';
+        var tradeaccURL = 'http://' + url + ':8000/api/v1/trading_acc/';
         var params = "?apikey=" + apikey;
         const website = tradeaccURL + accid + "/" + currency + params;
         const result = await getAjax(website, 'GET');
@@ -255,7 +274,7 @@ async function get_stock_pref(accid, apikey){
     var accid = UnicodeDecodeB64(accid);
     var apikey = UnicodeDecodeB64(apikey);
     try {
-        var stockprefURL = 'http://localhost:8000/api/v1/stock_pref/';
+        var stockprefURL = 'http://' + url + ':8000/api/v1/stock_pref/';
         var params = "?apikey=" + apikey;
         const website = stockprefURL + accid + params;
         const result = await getAjax(website, 'GET');
@@ -289,7 +308,7 @@ function firstCase(string){
 
 async function addstockpref(accid, apikey, addlist){
     try {
-        var addstockprefURL = 'http://localhost:8000/api/v1/stock_pref/add/';
+        var addstockprefURL = 'http://' + url + ':8000/api/v1/stock_pref/add/';
         var params = "?apikey=" + apikey;
         var data = {
             "accid": accid,
@@ -306,7 +325,7 @@ async function addstockpref(accid, apikey, addlist){
 
 async function delstockpref(accid, apikey, deletelist){
     try {
-        var delstockprefURL = 'http://localhost:8000/api/v1/stock_pref/remove/';
+        var delstockprefURL = 'http://' + url + ':8000/api/v1/stock_pref/remove/';
         var params = "?apikey=" + apikey;
         var data = {
             "accid": accid,
@@ -335,7 +354,7 @@ async function change_stock_pref(){
     var addlist = [];
     var deletelist = [];
     try{
-        var stockprefURL = 'http://localhost:8000/api/v1/stock_pref/';
+        var stockprefURL = 'http://' + url + ':8000/api/v1/stock_pref/';
         var params = "?apikey=" + apikey;
         const website = stockprefURL + accid + params;
         const result = await getAjax(website, 'GET');
@@ -364,4 +383,13 @@ async function change_stock_pref(){
     if (deletelist.length > 0){
         delstockpref(accid, apikey, deletelist);
     }   
-}
+};
+
+function search(){
+    var stock_symbol = document.getElementById("search_stocks").value.toUpperCase();
+    if (stock_symbol.length == 0){
+        alert("Please enter a stock symbol");
+        return;
+    }
+    get_stock(stock_symbol);
+} 
