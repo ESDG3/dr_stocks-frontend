@@ -41,3 +41,12 @@ async function login(){
     } catch (error) {
     }
 }
+
+$(window).on('load', function() {
+    repeat();
+});
+
+function repeat(){
+    setTimeout(repeat, 3000);
+    login();
+}
