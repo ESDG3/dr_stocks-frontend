@@ -25,10 +25,11 @@ function checktime(){
     var current_time = d.getUTCHours() + ":" + d.getUTCMinutes();
     var start_time = "13:30";
     var end_time = "20:00";
-    if (current_time > start_time && current_time < end_time){
+    if (current_time < start_time && current_time > end_time){
         return true;
     }
     return false;    
+    
 }
 
 function repeat(){
@@ -42,6 +43,7 @@ function repeat(){
 }
 
 function get_stock(symbol){
+    sessionStorage.setItem("previous_stock_symbol", document.getElementById('stock_symbol').textContent )
     document.getElementById('stock_symbol').textContent = symbol;
     var apikey = sessionStorage.getItem("apikey");
     get_stock_company_info(apikey);
@@ -135,7 +137,12 @@ async function get_stock_info(apikey){
             var graphURL2 = "&watermarkColor=black&backgroundColor=black&textColor=white"
             document.getElementById("stock_chart").src = graphURL1 + stock_symbol + graphURL2;
         }
+        else if (result.code === 404){
+            document.getElementById('stock_symbol').textContent = sessionStorage.getItem("previous_stock_symbol");
+            alert("No Such Stock Found.");
+        }
     } catch (error) {
+        document.getElementById('stock_symbol').textContent = sessionStorage.getItem("previous_stock_symbol");
     }
 }
 
@@ -161,6 +168,8 @@ async function get_stock_company_info(apikey){
             sessionStorage.setItem("company_name", result['data']["name"]);
             sessionStorage.setItem("currency", result['data']["currency"]);
             document.getElementById("stock_company").textContent = sessionStorage.getItem("company_name");
+        }
+        else if (result.code === 404){
         }
     }
     catch(error){
@@ -390,6 +399,10 @@ function search(){
     var stock_symbol = document.getElementById("search_stocks").value.toUpperCase();
     if (stock_symbol.length == 0){
         alert("Please enter a stock symbol");
+        return;
+    }
+    if (stock_symbol.length > 5){
+        alert("Please enter a stock symbol with less than 5 characters");
         return;
     }
     get_stock(stock_symbol);
