@@ -28,8 +28,7 @@ function checktime(){
     if (current_time < start_time && current_time > end_time){
         return true;
     }
-    return false;    
-    
+    return false;
 }
 
 function repeat(){
@@ -202,7 +201,6 @@ async function place_trade(){
             var accid = sessionStorage.getItem("accid");
             get_user_stock(accid, apikey);
             get_acc_bal(accid, apikey);
-
         }
     }
     catch (error) {
@@ -228,8 +226,6 @@ async function get_acc_bal(accid, apikey){
     } catch (error) {
     }
 };
-
-
 
 temp = {
     healthcare: ["UNH", "PFE", "SWTX", "INCY", "TMO"],
