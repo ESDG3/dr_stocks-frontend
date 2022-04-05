@@ -15,9 +15,9 @@ $(window).on('load', function() {
     get_stock_company_info(apikey);
     get_user_stock(accid, apikey);
     get_stock_info(apikey);
-    get_acc_bal(accid, apikey);
     get_stock_pref(accid, apikey);
     repeat();
+    get_acc_bal(accid, apikey);
 });
 
 function checktime(){
@@ -25,7 +25,7 @@ function checktime(){
     var current_time = d.getUTCHours() + ":" + d.getUTCMinutes();
     var start_time = "13:30";
     var end_time = "20:00";
-    if (current_time < start_time && current_time > end_time){
+    if (current_time > start_time && current_time < end_time){
         return true;
     }
     return false;
@@ -142,6 +142,7 @@ async function get_stock_info(apikey){
         }
     } catch (error) {
         document.getElementById('stock_symbol').textContent = sessionStorage.getItem("previous_stock_symbol");
+        alert("Error searching stock, please try again later.");
     }
 }
 
@@ -204,7 +205,7 @@ async function place_trade(){
         }
     }
     catch (error) {
-        alert("Error placing trade, please try again later");
+        alert("Error placing trade, please try again later.");
     }
 };
 
@@ -212,7 +213,7 @@ async function place_trade(){
 async function get_acc_bal(accid, apikey){
     var accid = UnicodeDecodeB64(accid);
     var apikey = UnicodeDecodeB64(apikey);
-    var currency = sessionStorage.getItem("currency");
+    var currency = "USD";
     try {
         var tradeaccURL = 'http://' + url + ':8000/api/v1/trading_acc/';
         var params = "?apikey=" + apikey;
