@@ -39,5 +39,6 @@ async function login(){
             window.location.replace("dashboard.html");
         }
     } catch (error) {
+        alert("Wrong email or password");
     }
 }
